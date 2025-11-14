@@ -2,7 +2,8 @@ totalValue = 0
 membershipKind = ["active", "temporal", "None"]
 membership = ""
 
-while True:
+flag = True
+while flag:
     print(
         "|- Big amount: more than $100.000\n|- Average amount: $50.000 up to 100.000\n|- Regular amount: Less than $50.000")
 
@@ -13,9 +14,10 @@ while True:
     elif int(totalValue) < 0:
         print("Cannot be less than 0, try again")
         continue
-    break
+    flag = False
 
-while True:
+flag = True
+while flag:
     print("\nMemberships options:\n- Active\n- Temporal\n- None\n")
 
     membership = input("Enter your kind of membership: ").strip().lower()
@@ -25,4 +27,11 @@ while True:
     if membership != membershipKind[0] and membership != membershipKind[1] and membership != membershipKind[2]:
         print("Please use only one of the options above")
         continue
-    break
+    flag = False
+
+if int(totalValue) > 100000 and membership == "active":
+    print("You're a PREMIUM client")
+elif 50000 <= int(totalValue) <= 10000 or membership == "temporal":
+    print("You are a FREQUENT customer")
+else:
+    print("You're a regular customer")
