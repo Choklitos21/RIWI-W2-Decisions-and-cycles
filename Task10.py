@@ -8,7 +8,7 @@ while flag:
     print("""
     ****************OPTIONS MENU****************
     |1. Turn lights ON
-    |2. Turn on heater
+    |2. Turn heater ON
     |3. Check status
     |4. EXIT
     """)
